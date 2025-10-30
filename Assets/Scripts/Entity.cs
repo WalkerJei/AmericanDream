@@ -2,30 +2,20 @@
 
 public class Entity : MonoBehaviour
 {
-
     // 생명력과 최대 생명력 
-    [SerializeField] ushort Hp;
-    [SerializeField] ushort maxHp;
-
-    //
-    [SerializeField] float walkSpeed;
-    public float WalkSpeed
+    [SerializeField] byte hp;
+    public byte Hp
     {
-        get { return walkSpeed; }
-        set { walkSpeed = value; }
+        get { return hp; }
+        set { hp = (byte)Mathf.Clamp(value, 0, maxHp); }
     }
+    [SerializeField] byte maxHp;
 
-    [SerializeField] float runSpeed;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // 이동속도
+    [SerializeField] float moveSpeed;
+    public float MoveSpeed
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        get { return moveSpeed; }
+        set { moveSpeed = value; }
     }
 }

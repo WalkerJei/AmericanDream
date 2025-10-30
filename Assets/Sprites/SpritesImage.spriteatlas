@@ -100,7 +100,6 @@ SpriteAtlas:
     - dd22d3c2c17d1d144852be6710de0057: 249294010
     - dd22d3c2c17d1d144852be6710de0057: 2137906696
     - dd22d3c2c17d1d144852be6710de0057: -239512881
-    - dd22d3c2c17d1d144852be6710de0057: 1339589705
     - dd22d3c2c17d1d144852be6710de0057: 1493126926
     - dd22d3c2c17d1d144852be6710de0057: 1098082402
     - dd22d3c2c17d1d144852be6710de0057: -1640800582
@@ -146,6 +145,7 @@ SpriteAtlas:
     - dd22d3c2c17d1d144852be6710de0057: 528105464
     - dd22d3c2c17d1d144852be6710de0057: -1003226767
     - dd22d3c2c17d1d144852be6710de0057: 903599823
+    - dd22d3c2c17d1d144852be6710de0057: 1339589705
     - dd22d3c2c17d1d144852be6710de0057: 1680951251
     - dd22d3c2c17d1d144852be6710de0057: 1693343275
     - dd22d3c2c17d1d144852be6710de0057: -573015049
@@ -253,7 +253,6 @@ SpriteAtlas:
   - {fileID: 249294010, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: 2137906696, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: -239512881, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
-  - {fileID: 1339589705, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: 1493126926, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: 1098082402, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: -1640800582, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
@@ -299,6 +298,7 @@ SpriteAtlas:
   - {fileID: 528105464, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: -1003226767, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: 903599823, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
+  - {fileID: 1339589705, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: 1680951251, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: 1693343275, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
   - {fileID: -573015049, guid: dd22d3c2c17d1d144852be6710de0057, type: 3}
@@ -405,7 +405,6 @@ SpriteAtlas:
   - Outlaw_Idle_Left
   - Outlaw_Walk1_Right
   - Cold James_Idle_Front
-  - Person_0
   - Billy Hot Kid_Walk2_Back
   - Cold James_Die_Left
   - Outlaw_Idle_Front
@@ -451,6 +450,7 @@ SpriteAtlas:
   - Billy Hot Kid_Walk1_Back
   - Billy Hot Kid_Walk1_Front
   - Billy Hot Kid_Walk2_Right
+  - Billy Hot Kid_Attack_Left
   - Billy Hot Kid_Die_Front
   - Outlaw_Idle_Right
   - Cold James_Die_Front
