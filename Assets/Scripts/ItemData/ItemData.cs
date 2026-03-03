@@ -81,18 +81,12 @@ public abstract class ItemData : ScriptableObject
     [SerializeField] ushort buyPrice;
     // 판매가
     [SerializeField] ushort sellPrice;
-    // 인벤토리 한 칸에 쌓은 아이템의 양
-    [SerializeField] byte stack;
-    public byte Stack
-    {
-        get { return stack; }
-        set { stack = (byte)Mathf.Clamp(value, 0, maxStack); }
-    }
+
     // 인벤토리 한 칸에 쌓을 수 있는 아이템의 최대 양
     [SerializeField] byte maxStack;
     public byte MaxStack
     {
-        get { return stack; }
+        get { return maxStack; }
     }
 
     // 아이템 설명

@@ -2,7 +2,7 @@
 
 public class ItemWeapon : Item
 {
-    public ItemWeaponData itemWeaponData { get; private set; }
+    ItemWeaponData itemWeaponData { get; set; }
     
     public ItemWeapon(ItemWeaponData data) : base(data)
     {

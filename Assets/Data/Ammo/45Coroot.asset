@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323bc5cfcac1e584ebd9dab395823634, type: 3}
+  m_Name: 45Coroot
+  m_EditorClassIdentifier: 
+  itemID: 9
+  itemCanOverlap: 1
+  itemCanInteract: 0
+  itemCanConsumable: 1
+  itemType: 8
+  itemName: ".45 \uCF54\uB8E8\uD2B8"
+  buyPrice: 4
+  sellPrice: 2
+  maxStack: 99
+  itemExplanation: "\uCF54\uB8E8\uD2B8 \uB9AC\uBCFC\uBC84\uC758 \uD0C4\uC57D\uC73C\uB85C
+    \uB300\uC911\uC801\uC774\uACE0 \uC704\uB825 \uB610\uD55C \uC900\uC218\uD558\uB2E4."
+  itemImage: {fileID: -745117458, guid: 7f814224d10ba6f4c92219b74bc4315e, type: 3}
+  typeBullet: 0

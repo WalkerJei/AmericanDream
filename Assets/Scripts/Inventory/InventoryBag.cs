@@ -3,5 +3,5 @@ using UnityEngine;
 
 public class InventoryBag : Inventory
 {
-
+    
 }

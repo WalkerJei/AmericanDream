@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Data.Common;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -23,6 +22,7 @@ public class InventoryUI : MonoBehaviour, IPointerClickHandler, IBeginDragHandle
     private GraphicRaycaster raycaster;
     private PointerEventData pointerEventData;
     private List<RaycastResult> raycastList;
+    private InputAction mousePositionAction;
 
     // 현재 드래그를 시작한 슬롯
     private ItemSlotUI beginDragSlot;
@@ -36,40 +36,34 @@ public class InventoryUI : MonoBehaviour, IPointerClickHandler, IBeginDragHandle
     private Vector2 beginDragCursorPoint;
     private int beginDragSlotSiblingId;
 
-    // 인벤토리 창 활성화 여부
-    [SerializeField] GameObject inventoryImage;
-    bool activeInventory = false;
-    public bool ActiveInventory
-    {
-        get { return activeInventory; }
-        set { activeInventory = value; }
-    }
-
-    InputAction inventoryAction;
-
-
     private void Awake()
     {
-       InitialSlots();
+        Initial();
+        InitialSlots();
     }
 
     private void Start()
     {
-        inventoryAction = InputSystem.actions.FindAction("Inventory");
-        inventoryImage.SetActive(activeInventory);
+        mousePositionAction = InputSystem.actions.FindAction("Point");
     }
 
     private void Update()
     {
-        
+        pointerEventData.position = mousePositionAction.ReadValue<Vector2>();
     }
 
-    private void FixedUpdate()
+    private void Initial()
     {
-        OnToggleInventoryUI();
-    }
+        TryGetComponent(out raycaster);
 
-    // 동적으로 인벤토리에 슬롯 생성
+        if(raycaster ==null)
+            raycaster = gameObject.AddComponent<GraphicRaycaster>();
+
+        pointerEventData = new PointerEventData(EventSystem.current);
+        raycastList = new List<RaycastResult>(10);
+    }
+    
+    /// <summary> 동적으로 인벤토리에 슬롯 생성 </summary>
     private void InitialSlots()
     {
         slotPrefab.TryGetComponent(out ItemSlotUI itemSlot);
@@ -182,15 +176,17 @@ public class InventoryUI : MonoBehaviour, IPointerClickHandler, IBeginDragHandle
             }
         }
     }
-    
-    // 토글로 인벤토리 열고 닫기
-    public void OnToggleInventoryUI()
-    {
-        if (inventoryAction.WasPressedThisFrame())
-        {
-            Debug.Log(inventoryAction);
-            ActiveInventory = !ActiveInventory;
-            inventoryImage.SetActive(ActiveInventory);
-        }
-    }
+
+    /// <summary> 인벤토리에서 직접 호출하는 방식으로 인벤토리 참조 등록 </summary>
+    public void SetInventoryReference(Inventory inventoryReference) => inventory = inventoryReference;
+
+    /// <summary> 슬롯에 아이템 아이콘 등록 </summary>
+    public void SetItemIcon(int id, Sprite icon) => slotUIList[id].SetItem(icon);
+    /// <summary> 해당 슬롯의 아이템 개수 텍스트 지정 </summary>
+    public void SetItemStackText(int id, byte stack) => slotUIList[id].SetItemStack(stack);
+    /// <summary> 해당 슬롯의 아이템 개수 텍스트 숨기기 </summary>
+    public void HideItemStackText(int id) => slotUIList[id].SetItemStack(1);
+    /// <summary> 해당 슬롯에서 아이템 제거 </summary>
+    public void RemoveItem(int id) => slotUIList[id].RemoveItem();
+
 }

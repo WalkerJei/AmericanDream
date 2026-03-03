@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public enum PlayerState
@@ -10,7 +11,7 @@ public enum PlayerState
 public class Player : Entity, IStaticable, IDynamicable
 {
     [SerializeField] byte level;
-    [SerializeField] byte Level
+    byte Level
     {
         get { return level; }
         set { level = (byte)Mathf.Clamp(value, 1, maxLevel); } 
@@ -50,6 +51,8 @@ public class Player : Entity, IStaticable, IDynamicable
 
     // 체온
     [SerializeField] float bodyTemperature;
+
+    InventoryBag inventoryBag;
 
 
     // 플레이어가 향한 방향
@@ -168,12 +171,13 @@ public class Player : Entity, IStaticable, IDynamicable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IObjectItem contactInterface = collision.transform.gameObject.GetComponent<IObjectItem>();
+        IObjectItem contactInterface = collision.gameObject.GetComponent<IObjectItem>();
 
         if (contactInterface != null)
         {
             ItemData item = contactInterface.ContactItem();
-            //inventory.AddItem(item);
+            
+            inventoryBag.AddItem(item);
             Destroy(collision.gameObject);
         }
     }

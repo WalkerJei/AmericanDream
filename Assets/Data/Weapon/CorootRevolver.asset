@@ -20,7 +20,6 @@ MonoBehaviour:
   itemName: "\uCF54\uB8E8\uD2B8 \uB9AC\uBCFC\uBC84"
   buyPrice: 10000
   sellPrice: 4000
-  stack: 1
   maxStack: 1
   itemExplanation: "\uCF54\uB8E8\uD2B8 \uC0AC\uC758 \uBCA0\uC2A4\uD2B8\uC140\uB7EC
     \uB9AC\uBCFC\uBC84\uB85C \uC11C\uBD80\uC5D0\uC11C \uC0B4\uC544\uB0A8\uAE30 \uC704\uD574\uC11C

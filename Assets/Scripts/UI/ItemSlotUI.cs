@@ -14,12 +14,12 @@ public class ItemSlotUI : MonoBehaviour
     [Tooltip("슬롯에 커서를 올리면 나타나는 하이라이트 이미지")]
     [SerializeField] Image hightlightImage;
 
-    ///<summary> 슬롯의 인덱스 /// </summary>
+    ///<summary> 슬롯의 인덱스 </summary>
     [SerializeField] int id;
     public int Id { get; private set; }
 
-    /// <summary> 접근 가능한 슬롯 여부 /// </summary>
-    [SerializeField] bool hasItem => itemImage.sprite != null;
+    /// <summary> 접근 가능한 슬롯 여부 </summary>
+    bool hasItem => itemImage.sprite != null;
     public bool HasItem
     {
         get { return hasItem; }
@@ -27,6 +27,7 @@ public class ItemSlotUI : MonoBehaviour
 
     private InventoryUI inventoryUI;
 
+    /// <summary> 슬롯 오브젝트 </summary>
     private RectTransform slotRect;
     public RectTransform SlotRect
     {
